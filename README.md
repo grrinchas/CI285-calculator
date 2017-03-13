@@ -26,5 +26,5 @@ In exceptional situations, the system will respond with an error code and JSON c
   - **/:operand** will have at least one non-digit character. E.g, **GET /additions/48,98/7458** 
   - **/:operations** has less than or more than two operands. E.g, **GET /additions/4898/**. In later releases, API may allow more operands.
 - 404 - not found. This can happen if 
-  - **/:operations** or **/:sign** has not been specified or have been mispelled. 
+  - **/:operations** has not been specified or have been mispelled. 
   
