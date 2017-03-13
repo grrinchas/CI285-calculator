@@ -15,7 +15,7 @@ in decimal system and requires only two operands. In addition, all URIs has the 
 In normal situations, the system will respond with status code 200 and JSON content. For example, 
 a response for GET request with an URI of
 
-**/additions/-4898/positives/7458** will have content of
+**/additions/-4898/7458** will have content of
 
   ```json
   {"result": 2560}
