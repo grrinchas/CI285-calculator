@@ -1,0 +1,29 @@
+<div class="container-fluid" style="background:#2B2D42">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <h1 style="color: #EDF2F4" >Calculate your brains out
+<div class="container" style="background:white">
+    <div class="row">
+        <div class="col-md-12">
+        <h2> CI285 Calculator
+        <form>
+            <div class="form-group">
+                 <input type="text" class="form-control" id="operand-1" placeholder="Enter first number">
+                 <input type="text" class="form-control" id="operand-2" placeholder="Enter second number">
+                 <label class="radio-inline">
+                 <input class="form-check-input" type="radio" name="operations" id="add" value="add" checked> Add
+                 <label class="radio-inline">
+                 <input class="form-check-input" type="radio" name="operations" id="subtract" value="subtract"> Subtract
+                 <label class="radio-inline">
+                 <input class="form-check-input" type="radio" name="operations" id="multiply" value="multiply"> Multiply
+                 <label class="radio-inline">
+                 <input class="form-check-input" type="radio" name="operations" id="divide" value="divide"> Divide
+                 <button type="submit" class="btn btn-primary">Calculate</button>
+
+<div class="container-fluid" style="background:#2B2D42">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center" style="color: #8D99AE">
+                    <small> © 2017 DAINIUS GRINCIUKAS. ALL RIGHTS RESERVED.
