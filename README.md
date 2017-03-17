@@ -20,7 +20,7 @@ a response for GET request with an URI of
   ```json
   {"result": "2560"}
   ```
-In exceptional situations, the system will respond with an error code.
+In exceptional situations, the system will respond with an error code and error page content.
 
 - 404 - not found. This can happen if 
   - **/:operations** has not been specified or have been mispelled. 
