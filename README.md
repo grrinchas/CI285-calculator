@@ -18,13 +18,12 @@ a response for GET request with an URI of
 **/additions/-4898/7458** will have content of
 
   ```json
-  {"result": 2560}
+  {"result": "2560"}
   ```
-In exceptional situations, the system will respond with an error code and JSON content with appropriate message.
+In exceptional situations, the system will respond with an error code.
 
-- 400 - bad request. This can happen if 
-  - **/:operand** will have at least one non-digit character. E.g, **GET /additions/48,98/7458** 
-  - **/:operations** has less than or more than two operands. E.g, **GET /additions/4898/**. In later releases, API may allow more operands.
 - 404 - not found. This can happen if 
   - **/:operations** has not been specified or have been mispelled. 
+  - **/:operand** will have at least one non-digit character. E.g, **GET /additions/48,98/7458** 
+  - **/:operations** has less than or more than two operands. E.g, **GET /additions/4898/**.
   
