@@ -1,29 +1,36 @@
-<div class="container-fluid" style="background:#2B2D42">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            <h1 style="color: #EDF2F4" >Calculate your brains out
-<div class="container" style="background:white">
+<html>
+ <body>
+  <div class="container">
     <div class="row">
-        <div class="col-md-12">
-        <h2> CI285 Calculator
-        <form>
-            <div class="form-group">
-                 <input type="text" class="form-control" id="operand-1" placeholder="Enter first number">
-                 <input type="text" class="form-control" id="operand-2" placeholder="Enter second number">
-                 <label class="radio-inline">
-                 <input class="form-check-input" type="radio" name="operations" id="add" value="add" checked> Add
-                 <label class="radio-inline">
-                 <input class="form-check-input" type="radio" name="operations" id="subtract" value="subtract"> Subtract
-                 <label class="radio-inline">
-                 <input class="form-check-input" type="radio" name="operations" id="multiply" value="multiply"> Multiply
-                 <label class="radio-inline">
-                 <input class="form-check-input" type="radio" name="operations" id="divide" value="divide"> Divide
-                 <button type="submit" class="btn btn-primary">Calculate</button>
+        <div class="col-md-10 col-md-offset-1">
+            <form class="form-horizontal" id="calculator">
+                <fieldset>
+                    <legend>Calculator v1.0
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="first-operand">Integer 1
+                        <div class="col-md-4">
+                            <input id="first-operand" name="first-operand" type="text" placeholder="Enter first integer"
+                                   class="form-control input-md" required="">
 
-<div class="container-fluid" style="background:#2B2D42">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <p class="text-center" style="color: #8D99AE">
-                    <small> © 2017 DAINIUS GRINCIUKAS. ALL RIGHTS RESERVED.
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="second-operand">Integer 2
+                        <div class="col-md-4">
+                            <input id="second-operand" name="second-operand" type="text"
+                                   placeholder="Enter second integer" class="form-control input-md" required="">
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">Operation
+                        <div class="col-md-4">
+                            <select id="operations" name="operations" class="form-control">
+                                <option value="add">Add
+                                <option value="subtract">Subtract
+                                <option value="multiply">Multiply
+                                <option value="divide">Divide
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="calculate">
+                        <div class="col-md-2">
+                            <button id="calculate" name="calculate" class="btn btn-primary">Calculate
+                        <div class="col-md-2">
+                            <h4>Result:
+                               <span id="answer" style="color: red">
