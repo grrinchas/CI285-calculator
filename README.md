@@ -11,7 +11,7 @@ Example:
   "password": "23#483uA"
 }
 ```
-Also note, that I don't define credentials in request header as per http specification but in JSON, because this is not an authorization but a registration. 
+Note, that I don't define credentials in request header as per http specification but in JSON, because this is not an authorization but a registration. 
 
 Possible responses:
 
