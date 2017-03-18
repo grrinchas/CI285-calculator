@@ -17,7 +17,7 @@ page = defaultLayout $ do
     addScriptRemote "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
     addScriptRemote "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     addScriptRemote "https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"
-    toWidget $(whamletFile "templates/default-layout.hamlet")
+    toWidget $(whamletFile "templates/main.hamlet")
     toWidget [julius|function Operation(n1, n2, op) {
                          this.n1 = n1;
                          this.n2 = n2;

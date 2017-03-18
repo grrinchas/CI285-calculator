@@ -13,7 +13,8 @@ build-type:          Simple
 extra-source-files:  README.md
                    , config/routes
                    , static/main.js
-                   , templates/default-layout.hamlet
+                   , templates/main.hamlet
+                   , templates/signup.hamlet
 cabal-version:       >=1.10
 
 executable           ci285-calculator
@@ -23,6 +24,7 @@ executable           ci285-calculator
                      Foundation
                      Handler.Operation
                      Handler.Home
+                     Handler.Signup
 
   build-depends:     base
                    , yesod
