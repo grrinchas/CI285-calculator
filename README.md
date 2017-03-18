@@ -1,5 +1,31 @@
+## Users API
 
-## CI285 Calculator API documentation
+API for dealing with users. That is creating new users, updating details, deleting as well as authenticating.
+
+- **POST /users** - registers new user. The POST method is an obvious choice, because no other method would be suitable for this task. For example, we can't use PUT, because it is used to create or replace a resource if it is already exists, which would result of replacing existing users with new ones (see http://stackoverflow.com/questions/630453/put-vs-post-in-rest). 
+Example:
+
+**POST /users**
+
+```json
+{
+  "username": "jhonDoe",
+  "password": "23#483uA"
+}
+```
+Also note, that I don't define credentials in request header as per http specification but in JSON, because this is not an authorization but a registration. 
+
+Possible responses:
+
+- 201 - if user have been created successfully.
+- 409 - if user with such username already exists.
+- 404 - otherwise
+
+- **DELETE /users/username** - removes user from the system, where **/username** represents a username of the user. Note, that I did not use ID instead of username, because an ID is less descriptive and less memorable. Imagine if you need to remember your ID when using GitHub :). 
+
+
+
+## Calculator API
 
 API for performing 4 basic operations of calculator: addition, subtraction, multiplication, division. Each operation is performed 
 in decimal system and requires only two operands. In addition, all URIs has the following general strucutre:
@@ -20,7 +46,7 @@ a response for GET request with an URI of
   ```json
   {"result": "2560"}
   ```
-In exceptional situations, the system will respond with an error code and error page content.
+In exceptional situations, the system will respond with an error code and an error page content.
 
 - 404 - not found. This can happen if 
   - **/:operations** has not been specified or have been mispelled. 
