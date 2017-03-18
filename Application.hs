@@ -9,5 +9,6 @@ import Foundation
 
 import Handler.Operation
 import Handler.Home
+import Handler.Signup
 
 mkYesodDispatch "App" resourcesApp

@@ -1,5 +1,6 @@
 
 / HomeR GET
+/signup SignupR GET
 /multiplications/#Integer/#Integer MultiplicationsR GET
 /divisions/#Integer/#Integer DivisionsR GET
 /additions/#Integer/#Integer AdditionsR GET

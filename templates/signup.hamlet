@@ -1,0 +1,78 @@
+$doctype 5
+<html>
+ <body>
+  <div class="container-fluid">
+    <div class="row" style="display: flex; align-items: center;background-color: #454545">
+        <div class="col-md-6">
+            <h2 style="color: #fff">
+                <a style="text-decoration: none;color: #fff;" href="http://localhost:3000/">
+                    <strong>CI285 Calculator v1.0
+
+        <div class="col-md-6">
+            <form class="form-inline" method="post" id="login">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="login-username" maxlength="20" placeholder="Username">
+                <div class="form-group">
+                    <input type="password" class="form-control" id="login-password" maxlength="50" placeholder="Password">
+                <button type="submit" class="btn btn-primary">Login
+                <span style="color: #fff">&nbsp;or&nbsp;
+                <button type="button" onclick="window.location.replace('http://localhost:3000/signup')" class="btn btn-danger">Sign up
+
+    <div class="row" style="padding-top: 100px; padding-bottom: 50px; background-color: #dddddd">
+        <div class="col-md-6 col-md-offset-3">
+            <h1><strong> Calculator is used by billions of non-existing users
+            <h2> So, join our community and be like nobody else.
+
+  <div class="container-fluid">
+    <div class="row" style="padding: 100px 0;">
+        <div class="col-md-6 col-md-offset-3">
+            <form class="form-horizontal" id="sign-up-form">
+                <fieldset>
+                    <div class="form-group" style="min-height: 90px;margin-bottom: 0">
+                        <h4 class=" col-md-4 text-right">
+                            <label class="control-label" for="sign-up-username">* Username:
+                        <div class="col-md-4">
+                            <input id="sign-up-username"
+                                   name="sign-up-username"
+                                   type="text"
+                                   placeholder="Enter your username"
+                                   class="form-control input-lg"
+                                   maxlength="20"
+                                   data-validation="length alphanumeric"
+                                   data-validation-allowing="-_"
+                                   data-validation-length="4-20"
+                                   required="">
+                    <div class="form-group" style="min-height: 90px;margin-bottom: 0">
+                        <h4 class=" col-md-4 text-right">
+                            <label class="control-label" for="sign-up-password">* Password:
+                        <div class="col-md-4">
+                            <input id="sign-up-password"
+                                   name="pass_confirmation"
+                                   type="password"
+                                   placeholder="Enter your password"
+                                   class="form-control input-lg"
+                                   maxlength="50"
+                                   data-validation="length"
+                                   data-validation-length="8-50"
+                                   required="">
+                    <div class="form-group" style="min-height: 90px;margin-bottom: 0">
+                        <h4 class=" col-md-4 text-right">
+                            <label class="control-label" for="sign-up-password-repeat">* Repeat Password:
+                        <div class="col-md-4">
+                            <input id="sign-up-password-repeat"
+                                   name="pass"
+                                   type="password"
+                                   placeholder="Repeat your password"
+                                   class="form-control input-lg"
+                                   maxlength="50"
+                                   data-validation="confirmation"
+                                   required="">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="sign-up">
+                        <div class="col-md-4">
+                            <button id="sign-up" style="border: 0" name="sign-up" class="btn-lg btn-primary">
+                                Create an account
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 text-center" style="background-color: #252525; color: #949494; padding: 20px 0">
+            <small>© 2017 DAINIUS GRINCIUKAS. ALL RIGHTS RESERVED.
