@@ -1,0 +1,12 @@
+User
+    username Text
+    password Text
+    UniqueUsername username
+    deriving Show
+Calculation
+    userId UserId
+    firstOperand Int
+    secondOperand Int
+    operation Int
+    result Int
+    deriving Show
