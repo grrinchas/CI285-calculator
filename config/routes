@@ -1,7 +1,9 @@
 
 / HomeR GET
 /signup SignupR GET
+/users UsersR POST
 /multiplications/#Integer/#Integer MultiplicationsR GET
 /divisions/#Integer/#Integer DivisionsR GET
 /additions/#Integer/#Integer AdditionsR GET
 /subtractions/#Integer/#Integer SubtractionsR GET
+

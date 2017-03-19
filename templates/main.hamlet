@@ -7,7 +7,7 @@ $doctype 5
            <h2 style="color: #fff">
                 <a style="text-decoration: none;color: #fff;" href="http://localhost:3000/">
                     <strong>CI285 Calculator v1.0
-        <div class="col-md-6">
+        <div class="col-md-6 text-right">
             <form class="form-inline" method="post" id="login">
                 <div class="form-group">
                     <input type="text" class="form-control" id="login-username" placeholder="Username">
@@ -53,7 +53,7 @@ $doctype 5
 
                     <div class="form-group" style="min-height: 80px;margin-bottom: 0">
                         <h4 class=" col-md-4 text-right" >
-                            <label class="control-label" for="operations">Operation
+                            <label class="control-label" for="operations">Operation:
                         <div class="col-md-4">
                             <select id="operations" name="operations" class="form-control input-lg">
                                 <option value="add">Add

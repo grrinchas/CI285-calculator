@@ -8,7 +8,7 @@ $doctype 5
                 <a style="text-decoration: none;color: #fff;" href="http://localhost:3000/">
                     <strong>CI285 Calculator v1.0
 
-        <div class="col-md-6">
+        <div class="col-md-6 text-right">
             <form class="form-inline" method="post" id="login">
                 <div class="form-group">
                     <input type="text" class="form-control" id="login-username" maxlength="20" placeholder="Username">
@@ -20,7 +20,7 @@ $doctype 5
 
     <div class="row" style="padding-top: 100px; padding-bottom: 50px; background-color: #dddddd">
         <div class="col-md-6 col-md-offset-3">
-            <h1><strong> Calculator is used by billions of non-existing users
+            <h1><strong>CI285 Calculator is used by billions of non-existing users
             <h2> So, join our community and be like nobody else.
 
   <div class="container-fluid">

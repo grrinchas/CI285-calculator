@@ -25,9 +25,11 @@ executable           ci285-calculator
                      Handler.Operation
                      Handler.Home
                      Handler.Signup
+                     Handler.Users
 
   build-depends:     base
                    , yesod
+                   , yesod-static
                    , shakespeare
                    , blaze-html
                    , aeson

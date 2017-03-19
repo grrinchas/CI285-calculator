@@ -13,6 +13,7 @@ import Control.Monad (when)
 
 data App = App
 
+
 mkYesodData "App" $(parseRoutesFile "config/routes")
 
 instance Yesod App where
