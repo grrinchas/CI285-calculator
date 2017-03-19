@@ -32,7 +32,7 @@ Note, that response includes `Location:` in the header which indicates where to 
 - 400 - if JSON is not properly formatted
 - 404 - otherwise
 
-- **DELETE /users/username** - removes user from the system, where **/username** represents a username of the user. Note, that I did not use **/id** instead of **/username**, because an **/id** is less descriptive and less memorable. Imagine if you need to remember your ID when using GitHub :). 
+- ** /users/username** - removes user from the system, where **/username** represents a username of the user. Note, that I did not use **/id** instead of **/username**, because an **/id** is less descriptive and less memorable. Imagine if you need to remember your ID when using GitHub :). 
 
 
 
