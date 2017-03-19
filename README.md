@@ -19,7 +19,7 @@ Possible responses:
 - 409 - if user with such username already exists.
 - 404 - otherwise
 
-- **DELETE /users/username** - removes user from the system, where **/username** represents a username of the user. Note, that I did not use ID instead of username, because an ID is less descriptive and less memorable. Imagine if you need to remember your ID when using GitHub :). 
+- **DELETE /users/username** - removes user from the system, where **/username** represents a username of the user. Note, that I did not use **/id** instead of **/username**, because an **/id** is less descriptive and less memorable. Imagine if you need to remember your ID when using GitHub :). 
 
 
 
