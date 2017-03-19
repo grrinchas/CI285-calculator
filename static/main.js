@@ -26,18 +26,44 @@ function getPath() {
     return localhost + operation;
 }
 
-
-$('#calculator').submit(function (event) {
-
-    jQuery.ajax( {
-        type: "GET",
-        url: getPath(),
-        dataType: "json",
-        success: function (data, status, req) {
-            $('#answer').text(JSON.parse(data).result);
-        }
-    });
-
-    event.preventDefault();
+$.validate({
+    form : '#calculator',
+    modules : 'security',
+    onError : function($form) {
+        return false; // Will stop the submission of the form
+    },
+    onSuccess : function($form) {
+        jQuery.ajax( {
+            type: "GET",
+            url: getPath(),
+            dataType: "json",
+            success: function (data, status, req) {
+                $('#answer').text(JSON.parse(req.responseText).result);
+            }
+        });
+        return false; // Will stop the submission of the form
+    },
 });
 
+function SignUp(username, password) {
+    this.username = username;
+    this.password = password; }
+
+$.validate({
+    form : '#sign-up-form',
+    modules : 'security',
+    onError : function($form) {
+        return false;
+    },
+    onSuccess : function($form) {
+        jQuery.ajax( {
+            type: 'POST',
+            url: 'http://localhost:3000/users',
+            data: JSON.stringify(new SignUp($('#sign-up-username').val(), $('#sign-up-password').val())),
+            success: function (data, status, req) {
+                console.log('success');
+            }
+        });
+        return false;
+    },
+});
