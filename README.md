@@ -26,7 +26,7 @@ Possible responses:
 }
 ```
 
-Note, that response includes `Location:` in the header which indicates where to find a new resource. But to access it, client must to authenticate itself first. Also, response has JSON body, which tells to the client what kind of resource has been created. At the moment repsonse body is the same as request.
+Note, that response includes `Location:` in the header which indicates where to find a new resource. But to access it, client must to authenticate itself first. Also, response has JSON body, which tells to the client what kind of resource has been created.
 
 - 409 - if user with such username already exists.
 - 400 - if JSON is not properly formatted
