@@ -5,7 +5,7 @@ $doctype 5
     <div class="row" style="display: flex; align-items: center">
         <div class="col-md-6">
            <h2 style="color: #fff">
-                <a style="text-decoration: none;color: #fff;" href="http://localhost:3000/">
+                <a style="text-decoration: none;color: #fff;" href="/">
                     <strong>CI285 Calculator v1.0
         <div class="col-md-6 text-right">
             <form class="form-inline" method="post" id="login">
@@ -15,7 +15,7 @@ $doctype 5
                     <input type="password" class="form-control" id="login-password" placeholder="Password">
                 <button type="submit" class="btn btn-primary">Login
                 <span style="color: #fff">&nbsp;or&nbsp;
-                <button type="button" onclick="window.location.replace('http://localhost:3000/signup')" class="btn btn-danger">Sign up
+                <button type="button" onclick="window.location.replace('/signup')" class="btn btn-danger">Sign up
 
   <div class="container-fluid">
     <div class="row" style="padding-top: 100px; padding-bottom: 50px; background-color: #dddddd">

@@ -8,7 +8,6 @@ import Foundation
 
 data Answer = Answer { result :: String} deriving Show
 
-
 instance ToJSON Answer where
     toJSON (Answer result) = object ["result" .= result]
 
