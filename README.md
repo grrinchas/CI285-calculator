@@ -25,7 +25,7 @@ Note, that response includes `Location:` in the header which indicates where to 
 - 400 - if JSON is not properly formatted
 - 404 - otherwise
 
-- **GET /users/:username** - request for users home page. To resource requires user to authenticate itself, before he can access it. Note, that I did not use **/id** instead of **/username**, because an **/id** is less descriptive and less memorable.
+- **GET /users/:username** - request for users home page. This resource requires user to authenticate itself, before he can access it. Note, that I did not use **/id** instead of **/username**, because an **/id** is less descriptive and less memorable.
 
 
 
