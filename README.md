@@ -11,7 +11,7 @@ Example:
   "password": "23#483uA"
 }
 ```
-Note, that I don't define credentials in request header as per http specification but in JSON, because this is not an authentication but a registration. 
+**NOTE** This is not very secure way of doing.
 
 Possible responses:
 
@@ -19,14 +19,7 @@ Possible responses:
 
 `Location: http://localhost:3000/users/johnDoe`
 
-```json
-{
-  "username": "johnDoe",
-  "password": "23#483uA"
-}
-```
-
-Note, that response includes `Location:` in the header which indicates where to find a new resource. But to access it, client must to authenticate itself first. Also, response has JSON body, which tells to the client what kind of resource has been created.
+Note, that response includes `Location:` in the header which indicates where to find a new resource. But to access it, client must to authenticate itself first.
 
 - 409 - if user with such username already exists.
 - 400 - if JSON is not properly formatted
