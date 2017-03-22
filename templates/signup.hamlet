@@ -11,10 +11,10 @@ $doctype 5
         <div class="col-md-6 text-right">
             <form class="form-inline" method="post" id="login">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="login-username" maxlength="20" placeholder="Username">
+                    <input required type="text" class="form-control" id="login-username" maxlength="20" placeholder="Username">
                 <div class="form-group">
-                    <input type="password" class="form-control" id="login-password" maxlength="50" placeholder="Password">
-                <button type="submit" class="btn btn-primary">Login
+                    <input required type="password" class="form-control" id="login-password" maxlength="50" placeholder="Password">
+                <button id="login-submit" class="btn btn-primary">Login
                 <span style="color: #fff">&nbsp;or&nbsp;
                 <button type="button" onclick="window.location.replace('/signup')" class="btn btn-danger">Sign up
 

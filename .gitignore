@@ -19,3 +19,4 @@ cabal.sandbox.config
 cabal.project.local
 .idea/
 ci285-cal.iml
+ci285-calculator.iml

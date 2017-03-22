@@ -1,30 +1,29 @@
 $doctype 5
-<html>
- <body>
-  <div class="container-fluid" style="background-color: #454545">
+<body>
+ <div class="container-fluid" style="background-color: #454545">
     <div class="row" style="display: flex; align-items: center">
         <div class="col-md-6">
-           <h2 style="color: #fff">
+            <h2 style="color: #fff">
                 <a style="text-decoration: none;color: #fff;" href="/">
                     <strong>CI285 Calculator v1.0
-
         <div class="col-md-6 text-right">
-            <form class="form-inline" method="post" id="login">
-                <div class="form-group">
-                    <input required type="text" class="form-control" id="login-username" placeholder="Username">
-                <div class="form-group">
-                    <input required type="password" class="form-control" id="login-password" placeholder="Password">
-                <button id="login-submit"  class="btn btn-primary">Login
-                <span style="color: #fff">&nbsp;or&nbsp;
-                <button type="button" onclick="window.location.replace('/signup')" class="btn btn-danger">Sign up
+            <button type="button" class="btn dropdown-toggle width: 20px;height: 20px" style="color: white;"
+                    data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user" style="color: #454545;font-size: 20px" aria-hidden="true">
 
-  <div class="container-fluid">
+            <ul class="dropdown-menu pull-right" role="menu">
+                    <a href="#">History
+                <li class="divider">
+                    <a href="/">Logout
+
+ <div class="container-fluid">
     <div class="row" style="padding-top: 100px; padding-bottom: 50px; background-color: #dddddd">
         <div class="col-md-12">
             <form class="form-horizontal" id="calculator">
+                <fieldset>
                     <div class="form-group" style="min-height: 80px;margin-bottom: 0">
-                        <h4 class=" col-md-4 text-right" >
-                            <label class="control-label" for="operations">* Integer 1:
+                        <h4 class=" col-md-4 text-right">
+                            <label class="control-label" for="operations">Integer 1
                         <div class="col-md-4">
                             <input id="first-operand"
                                    name="first-operand"
@@ -38,8 +37,8 @@ $doctype 5
                                    required="">
 
                     <div class="form-group" style="min-height: 80px;margin-bottom: 0">
-                        <h4 class=" col-md-4 text-right" >
-                            <label class="control-label" for="operations">* Integer 2:
+                        <h4 class=" col-md-4 text-right">
+                            <label class="control-label" for="operations">Integer 2
                         <div class="col-md-4">
                             <input id="second-operand"
                                    name="second-operand"
@@ -53,25 +52,33 @@ $doctype 5
                                    required="">
 
                     <div class="form-group" style="min-height: 80px;margin-bottom: 0">
-                        <h4 class=" col-md-4 text-right" >
-                            <label class="control-label" for="operations">Operation:
+                        <h4 class=" col-md-4 text-right">
+                            <label class="control-label" for="operations">Operation
+
                         <div class="col-md-4">
                             <select id="operations" name="operations" class="form-control input-lg">
                                 <option value="add">Add
                                 <option value="subtract">Subtract
                                 <option value="multiply">Multiply
                                 <option value="divide">Divide
-
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="calculate">
-                        <div class="col-md-4">
-                            <button id="calculate" style="border: 0" name="calculate" class="btn-lg btn-primary">Calculate
-    <div class="row" style="padding-top: 100px; padding-bottom: 250px; background-color: #454545; word-wrap: break-word; overflow-wrap:break-word">
+
+                        <div class="btn-group col-md-4">
+                            <button id="calculate" style="border: 0;min-width: 100px" name="calculate"
+                                    class="btn-lg btn-primary">Calculate
+                            <button id="save" style="border: 0;min-width: 100px;background-color: #84afd3" name="save"
+                                    class="btn-lg btn-primary">Save
+
+                    <div class="form-group">
+                        <div class="col-md-4" id="save-success">
+
+    <div class="row" style="padding-top: 100px; padding-bottom: 250px; background-color: #454545">
         <div class="col-md-12 text-center" style="color: #fff">
             <h1 style="font-size: 70px">
                 <strong id="answer">&nbsp;
 
-  <div class="container-fluid">
+ <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 text-center" style="background-color: #252525; color: #949494; padding: 20px 0">
             <small>© 2017 DAINIUS GRINCIUKAS. ALL RIGHTS RESERVED.

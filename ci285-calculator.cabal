@@ -42,6 +42,8 @@ executable           ci285-calculator
                    , monad-logger
                    , resourcet
                    , text
+                   , base64-bytestring
+                   , either-unwrap
 
 source-repository head
   type:              git

@@ -50,6 +50,30 @@ function User(username, password) {
     this.password = password;
 }
 
+
+$.validate({
+    form: '#login',
+    onSuccess: function () {
+        jQuery.ajax({
+            sync: false,
+            type: "GET",
+            url: "http://localhost:3000/users/" +  $('#login-username').val(),
+            beforeSend: function (xhr) {
+                var username = $('#login-username').val();
+                var password = $('#login-password').val();
+                var encoded = btoa(username + ":" + password);
+                xhr.setRequestHeader ("Authorization", "Basic " + encoded);
+            },
+            success: function (data, status, req) {
+                $('#login')[0].reset();
+              //  window.location.replace('/users/'+ 'as');
+                $('body').html(data);
+            }
+        });
+        return false;
+    }
+});
+
 $.validate({
     form: '#sign-up-form',
     modules: 'security',
@@ -65,7 +89,7 @@ $.validate({
             success: function (data, status, req) {
                 $('#sign-up-form')[0].reset();
 
-                if(!$('#sign-up-success').length){
+                if (!$('#sign-up-success').length) {
                     $('#sign-up-form').prepend('<div class="alert alert-success" id="sign-up-success">' +
                         '<strong>Congratulations!</strong>Your registration was successful. Now you can login.</div>');
                 }
