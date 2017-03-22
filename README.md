@@ -38,7 +38,7 @@ Possible responses:
 - 401 - if username and password doesn't match OR request doesn't have `Authorization` header
 - 404 - if user doesn't exists.
 
-- **PUT /users/:username/:operations/:operand/:operand** - saves users calculation in the history.
+**PUT /users/:username/:operations/:operand/:operand** - saves users calculation in the history.
 
 
 ## Calculator API
