@@ -4,7 +4,7 @@ API for dealing with users. That is creating new users, updating details, deleti
 
 ### _POST /users_
 
-Rgisters new user. The POST method is an obvious choice, because no other method would be suitable for this task. For example, we can't use PUT, because it is used to create or replace a resource if it is already exists, which would result of replacing existing users with new ones (see http://stackoverflow.com/questions/630453/put-vs-post-in-rest). 
+Rgisters new user. The POST method is an obvious choice, because no other method would be suitable for this task. For example, we can't use PUT, because it is used to create or replace a resource if it is already exists, which would result of replacing existing users with new ones.
 Example:
 
 ```json
@@ -33,8 +33,10 @@ Request for users home page. This resource requires user to authenticate itself 
 
 Example 
 
-`GET /users/username HTTP/1.1`
-`Authorization: Basic wpoauidhfiopuh=`
+```
+GET /users/username HTTP/1.1
+Authorization: Basic wpoauidhfiopuh=
+```
 
 Possible responses:
 
