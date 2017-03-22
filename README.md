@@ -25,8 +25,20 @@ Note, that response includes `Location:` in the header which indicates where to 
 - 400 - if JSON is not properly formatted
 - 404 - otherwise
 
-- **GET /users/:username** - request for users home page. This resource requires user to authenticate itself, before he can access it. Note, that I did not use **/id** instead of **/username**, because an **/id** is less descriptive and less memorable.
+- **GET /users/:username** - request for users home page. This resource requires user to authenticate itself using `Basic authentication`, before he can access it. Note, that I did not use **/id** instead of **/username**, because an **/id** is less descriptive and less memorable.
 
+Example 
+
+`GET /users/username HTTP/1.1`
+`Authorization: Basic wpoauidhfiopuh=`
+
+Possible responses:
+
+- 400 - if authorization header is not formatted properly
+- 401 - if username and password doesn't match OR request doesn't have `Authorization` header
+- 404 - if user doesn't exists.
+
+- **PUT /users/:username/:operations/:operand/:operand** - saves users calculation in the history.
 
 
 ## Calculator API
