@@ -2,7 +2,7 @@
 
 API for dealing with users. That is creating new users, updating details, deleting as well as authenticating.
 
-### POST /users
+### _POST /users_
 
 Rgisters new user. The POST method is an obvious choice, because no other method would be suitable for this task. For example, we can't use PUT, because it is used to create or replace a resource if it is already exists, which would result of replacing existing users with new ones (see http://stackoverflow.com/questions/630453/put-vs-post-in-rest). 
 Example:
@@ -27,7 +27,9 @@ Note, that response includes `Location:` in the header which indicates where to 
 - 400 - if JSON is not properly formatted
 - 404 - otherwise
 
-GET /users/:username** - request for users home page. This resource requires user to authenticate itself using `Basic authentication`, before he can access it. Note, that I did not use **/id** instead of **/username**, because an **/id** is less descriptive and less memorable.
+### _GET /users/:username_
+
+Request for users home page. This resource requires user to authenticate itself using `Basic authentication`, before he can access it. Note, that I did not use **/id** instead of **/username**, because an **/id** is less descriptive and less memorable.
 
 Example 
 
@@ -40,7 +42,9 @@ Possible responses:
 - 401 - if username and password doesn't match OR request doesn't have `Authorization` header
 - 404 - if user doesn't exists.
 
-**PUT /users/:username/:operations/:operand/:operand** - saves users calculation in the history.
+### _PUT /users/:username/:operations/:operand/:operand_
+
+Saves users calculation in the history.
 
 
 ## Calculator API
@@ -48,7 +52,7 @@ Possible responses:
 API for performing 4 basic operations of calculator: addition, subtraction, multiplication, division. Each operation is performed 
 in decimal system and requires only two operands. In addition, all URIs has the following general strucutre:
 
-**GET /:operations/:operand/:operand**
+### _GET /:operations/:operand/:operand_
 
 - **GET** - request method. `GET` primary is used to retrieve information of the resource, but in this case it doesn't exist yet, because any requested calculation will be done after request. But in the future we me implement a cache where most common calculations will be stored. In that case `GET` would make perfect sense.
 
