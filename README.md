@@ -44,6 +44,10 @@ Possible responses:
 - 401 - if username and password doesn't match OR request doesn't have `Authorization` header
 - 404 - if user doesn't exists.
 
+## Calculations history API
+
+API for saving and retrieving calculations.
+
 ### _PUT /:username/:operations/:operand/:operand_
 
 Saves users calculation in the history.
