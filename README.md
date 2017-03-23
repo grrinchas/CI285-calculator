@@ -41,17 +41,8 @@ Authorization: Basic wpoauidhfiopuh=
 Possible responses:
 
 - 400 - if authorization header is not formatted properly
-- 401 - if username and password doesn't match OR request doesn't have `Authorization` header
+- 401 - if username and password doesn't match OR request doesn't have `Authorization` header. Also it includes `WWW-Authenticate: Basic realm="users"` header.
 - 404 - if user doesn't exists.
-
-## Calculations history API
-
-API for saving and retrieving calculations.
-
-### _PUT /:username/:operations/:operand/:operand_
-
-Saves users calculation in the history.
-
 
 ## Calculator API
 
@@ -81,3 +72,24 @@ In exceptional situations, the system will respond with an error code and an err
   - **/:operand** will have at least one non-digit character. E.g, **GET /additions/48,98/7458** 
   - **/:operations** has less than or more than two operands. E.g, **GET /additions/4898/**.
   
+
+## Calculations history API
+
+API for saving and retrieving calculations.
+
+### _PUT /:operations/:operand/:operand:/:username_
+
+Saves users calculation in the database. Note, that only authorised users can access this resource.
+
+Possible responses:
+
+- 201 - if calculation was saved successfuly. This response doesn't have `Location:` header, instead it returns an JSON answer in the body, as in calculator API.
+- 301 - if user is not have been authenticated or session expired
+- 404 - if url was wrong
+- 400 - badly formatter request.
+
+### _GET /calculations/:username_
+
+Returns all calculations for specific user. Note, that only authorised users can access this resource.
+
+Possible responses:
