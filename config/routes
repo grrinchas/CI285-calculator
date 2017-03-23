@@ -6,9 +6,15 @@
 /users UsersR POST
 /users/#Text UsersHomeR GET
 
+/multiplications/#Integer/#Integer/#Text UsersMultiplicationsR PUT
+/divisions/#Integer/#Integer/#Text UsersDivisionsR PUT
+/additions/#Integer/#Integer/#Text UsersAdditionsR PUT
+/subtractions/#Integer/#Integer/#Text UsersSubtractionsR PUT
+
 /multiplications/#Integer/#Integer MultiplicationsR GET
 /divisions/#Integer/#Integer DivisionsR GET
 /additions/#Integer/#Integer AdditionsR GET
 /subtractions/#Integer/#Integer SubtractionsR GET
+
 
 /static StaticR Static getStatic

@@ -7,6 +7,6 @@ Calculation
     userId UserId
     firstOperand Int
     secondOperand Int
-    operation Int
+    operation Text
     result Int
     deriving Show

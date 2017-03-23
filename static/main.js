@@ -21,21 +21,43 @@ function Operation(n1, n2, op) {
 }
 
 function getPath() {
-    var localhost = "http://localhost:3000";
-    var operation = new Operation($('#first-operand').val(), $('#second-operand').val(), $('#operations').val()).toPath();
-    return localhost + operation;
+    return new Operation($('#first-operand').val(), $('#second-operand').val(), $('#operations').val()).toPath();
 }
 
 $.validate({
+    form: '#calculator-user',
+    onError: function ($form) {
+        return false;
+    },
+    onSuccess: function ($form) {
+        jQuery.ajax({
+            type: "PUT",
+            url: "http://localhost:3000" + getPath() + $('#save').attr("value"),
+            success: function (data, status, req) {
+                var answer = JSON.parse(req.responseText).result;
+                $('#answer').text(answer);
+
+                if($('#saved-success').length) {
+                    $('#saved-success').remove();
+                }
+
+                $('#save-success').after("<div class='col-md-4'id='saved-success'>" + "<div class='alert alert-success'>" +
+                    answer + " has been saved. Check your calculation <a href='#'>history</a>." + "</div>" + "</div>");
+            }
+        });
+        return false;
+    }
+});
+
+$.validate({
     form: '#calculator',
-    modules: 'security',
     onError: function ($form) {
         return false;
     },
     onSuccess: function ($form) {
         jQuery.ajax({
             type: "GET",
-            url: getPath(),
+            url: "http://localhost:3000" + getPath(),
             dataType: "json",
             success: function (data, status, req) {
                 $('#answer').text(JSON.parse(req.responseText).result);
@@ -44,6 +66,11 @@ $.validate({
         return false;
     }
 });
+
+
+function calOrSave() {
+
+}
 
 function User(username, password) {
     this.username = username;
@@ -57,17 +84,29 @@ $.validate({
         jQuery.ajax({
             sync: false,
             type: "GET",
-            url: "http://localhost:3000/users/" +  $('#login-username').val(),
+            url: "http://localhost:3000/users/" + $('#login-username').val(),
             beforeSend: function (xhr) {
                 var username = $('#login-username').val();
                 var password = $('#login-password').val();
                 var encoded = btoa(username + ":" + password);
-                xhr.setRequestHeader ("Authorization", "Basic " + encoded);
+                xhr.setRequestHeader("Authorization", "Basic " + encoded);
             },
             success: function (data, status, req) {
                 $('#login')[0].reset();
-              //  window.location.replace('/users/'+ 'as');
                 $('body').html(data);
+            },
+
+            statusCode: {
+                404: function () {
+                    if (!$('#wrong-name-pass').length) {
+                        $('#login').prepend('<span id= "wrong-name-pass" style="color: #d9534f"> Incorrect username or password </span>');
+                    }
+                },
+                401: function () {
+                    if (!$('#wrong-name-pass').length) {
+                        $('#login').prepend('<span id= "wrong-name-pass" style="color: #d9534f"> Incorrect username or password </span>');
+                    }
+                }
             }
         });
         return false;
@@ -103,4 +142,8 @@ $.validate({
         });
         return false;
     }
+});
+
+$(document).ready(function () {
+    $(".dropdown-toggle").dropdown();
 });

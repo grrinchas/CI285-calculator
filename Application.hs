@@ -10,6 +10,7 @@ import Foundation
 import Handler.Operation
 import Handler.Home
 import Handler.Signup
-import Handler.Users
+import Handler.User
+import Handler.History
 
 mkYesodDispatch "App" resourcesApp

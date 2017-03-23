@@ -24,7 +24,8 @@ executable           ci285-calculator
                      Handler.Operation
                      Handler.Home
                      Handler.Signup
-                     Handler.Users
+                     Handler.User
+                     Handler.History
 
   build-depends:     base
                    , yesod
@@ -44,6 +45,7 @@ executable           ci285-calculator
                    , text
                    , base64-bytestring
                    , either-unwrap
+                   , bytestring
 
 source-repository head
   type:              git

@@ -59,7 +59,7 @@ instance Yesod App where
           <div class="container">
             <div class="row" style="margin-top: 100px">
                 <div class="col-md-12 text-center">
-                    <img src=@{StaticR sad_face_png}/>
+                    <img style="width: 100px;height=100px" src=@{StaticR sad_face_png}/>
                     <h1>Oops,
                     <h2>Sorry, an error has occured, #{show other}
                     <a href="http://localhost:3000" class="btn btn-large btn-info"><i class="icon-home icon-white"></i> Take Me Home</a>
