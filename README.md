@@ -13,7 +13,7 @@ You have to downlaod [stack](https://docs.haskellstack.org/en/stable/README/) if
 ## Screenshots
 
 ### Login screen
-![Imgur](http://i.imgur.com/xBTUDVH.png)
+![Imgur](http://i.imgur.com/GGRxSI0.png)
 
 ### Signup screen
 ![Imgur](http://i.imgur.com/q5PiNUL.png)
