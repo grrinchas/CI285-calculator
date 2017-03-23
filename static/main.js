@@ -37,17 +37,30 @@ $.validate({
                 var answer = JSON.parse(req.responseText).result;
                 $('#answer').text(answer);
 
-                if($('#saved-success').length) {
+                if ($('#saved-success').length) {
                     $('#saved-success').remove();
                 }
 
                 $('#save-success').after("<div class='col-md-4'id='saved-success'>" + "<div class='alert alert-success'>" +
-                    answer + " has been saved. Check your calculation <a href='#'>history</a>." + "</div>" + "</div>");
+                    answer + " has been saved. Check your calculation <a href='/history'>history</a>." + "</div>" + "</div>");
             }
         });
         return false;
     }
 });
+
+$('#logout').click(function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'DELETE',
+        url: "http://localhost:3000/logout",
+        success: function (data) {
+            window.location.href = "/"
+        }
+    });
+
+});
+
 
 $.validate({
     form: '#calculator',
@@ -67,10 +80,6 @@ $.validate({
     }
 });
 
-
-function calOrSave() {
-
-}
 
 function User(username, password) {
     this.username = username;

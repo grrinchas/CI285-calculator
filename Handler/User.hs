@@ -111,10 +111,10 @@ homeUserLayout name = defaultLayout $ do
                                                       <span class="glyphicon glyphicon-user" style="color: #454545;font-size: 20px" aria-hidden="true">
                                                   <ul class="dropdown-menu pull-right" role="menu">
                                                       <li>
-                                                         <a href="#">History
+                                                         <a href="/history">History
                                                       <li class="divider">
                                                       <li>
-                                                         <a href="/">Logout
+                                                         <a id="logout" href="/logout">Logout
 
                                         <div class="container-fluid">
                                           <div class="row" style="padding-top: 100px; padding-bottom: 50px; background-color: #dddddd">

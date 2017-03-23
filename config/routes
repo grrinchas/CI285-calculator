@@ -2,9 +2,12 @@
 / HomeR GET
 
 /signup SignupR GET
+/logout LogoutR DELETE
+/history HistoryR GET
 
 /users UsersR POST
 /users/#Text UsersHomeR GET
+
 
 /multiplications/#Integer/#Integer/#Text UsersMultiplicationsR PUT
 /divisions/#Integer/#Integer/#Text UsersDivisionsR PUT

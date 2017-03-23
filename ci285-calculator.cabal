@@ -23,7 +23,6 @@ executable           ci285-calculator
                      Foundation
                      Handler.Operation
                      Handler.Home
-                     Handler.Signup
                      Handler.User
                      Handler.History
 
