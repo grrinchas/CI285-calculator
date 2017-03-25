@@ -12,13 +12,17 @@ instance ToJSON Answer where
     toJSON (Answer result) = object ["result" .= result]
 
 getMultiplicationsR :: Integer -> Integer -> Handler Value
-getMultiplicationsR x y = returnJson $ Answer ( x * y)
+getMultiplicationsR x y = operationJson $ x * y
 
 getDivisionsR :: Integer -> Integer -> Handler Value
-getDivisionsR x y = returnJson $ Answer (x `div` y)
+getDivisionsR x y = operationJson $ div x y
 
 getAdditionsR :: Integer -> Integer -> Handler Value
-getAdditionsR x y = returnJson $ Answer (x + y)
+getAdditionsR x y = operationJson $ x + y
 
 getSubtractionsR :: Integer -> Integer -> Handler Value
-getSubtractionsR x y = returnJson $ Answer (x - y)
+getSubtractionsR x y = operationJson $ x - y
+
+
+operationJson :: Integer -> Handler Value
+operationJson a = returnJson $ Answer a

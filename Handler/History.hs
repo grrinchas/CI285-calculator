@@ -38,85 +38,47 @@ import qualified Data.ByteString as BS (split, drop, putStrLn)
 import Handler.Operation
 
 
+data Operation = Multiplication | Division | Subtraction | Addition
+    deriving (Show)
 
 
 putUsersMultiplicationsR :: Integer -> Integer -> Text -> Handler ()
-putUsersMultiplicationsR x y n = do
-    maybeName <- lookupSession "username"
-    case maybeName of
-        Just name -> do
-            maybeUser <- runDB $ getBy $ UniqueUsername name
-            case maybeUser of
-                Just user@(Entity id _) -> do
-                    let answer = fromInteger (x * y)
-                    calcId <- runDB $ insert (Calculation id (fromInteger x) (fromInteger y) "Multiplication" answer )
-                    json <- returnJson $ Answer (x * y)
-                    sendResponseStatus status201 json
-                Nothing -> do
-                    addHeader "Location" "http://localhost:3000/"
-                    sendResponseStatus status301 ()
-        Nothing -> do
-            addHeader "Location" "http://localhost:3000/"
-            sendResponseStatus status301 ()
+putUsersMultiplicationsR x y _ = putOperation x y Multiplication (x * y)
 
-
-putUsersDivisionsR :: Integer -> Integer -> Text-> Handler ()
-putUsersDivisionsR x y n = do
-    maybeName <- lookupSession "username"
-    case maybeName of
-        Just name -> do
-            maybeUser <- runDB $ getBy $ UniqueUsername name
-            case maybeUser of
-                Just user@(Entity id _) -> do
-                    let answer = fromInteger (x `div` y)
-                    calcId <- runDB $ insert (Calculation id (fromInteger x) (fromInteger y) "Division" answer )
-                    json <- returnJson $ Answer (x `div` y)
-                    sendResponseStatus status201 json
-                Nothing -> do
-                    addHeader "Location" "http://localhost:3000/"
-                    sendResponseStatus status301 ()
-        Nothing -> do
-            addHeader "Location" "http://localhost:3000/"
-            sendResponseStatus status301 ()
-
+putUsersDivisionsR :: Integer -> Integer -> Text -> Handler ()
+putUsersDivisionsR x y _ = putOperation x y Division (x `div` y)
 
 putUsersAdditionsR :: Integer -> Integer -> Text -> Handler ()
-putUsersAdditionsR x y n = do
-    maybeName <- lookupSession "username"
-    case maybeName of
-        Just name -> do
-            maybeUser <- runDB $ getBy $ UniqueUsername name
-            case maybeUser of
-                Just user@(Entity id _) -> do
-                    let answer = fromInteger (x + y)
-                    calcId <- runDB $ insert (Calculation id (fromInteger x) (fromInteger y) "Addition" answer )
-                    json <- returnJson $ Answer (x + y)
-                    sendResponseStatus status201 json
-                Nothing -> do
-                    addHeader "Location" "http://localhost:3000/"
-                    sendResponseStatus status301 ()
-        Nothing -> do
-            addHeader "Location" "http://localhost:3000/"
-            sendResponseStatus status301 ()
+putUsersAdditionsR x y _ = putOperation x y Addition (x + y)
 
-putUsersSubtractionsR :: Integer -> Integer -> Text->Handler ()
-putUsersSubtractionsR x y n = do
+putUsersSubtractionsR :: Integer -> Integer -> Text -> Handler ()
+putUsersSubtractionsR x y _ = putOperation x y Subtraction (x - y)
+
+putOperation :: Integer -> Integer -> Operation -> Integer -> Handler ()
+putOperation x y op a = do
     maybeName <- lookupSession "username"
     case maybeName of
         Just name -> do
             maybeUser <- runDB $ getBy $ UniqueUsername name
             case maybeUser of
-                Just user@(Entity id _) -> do
-                    let answer = fromInteger (x - y)
-                    calcId <- runDB $ insert (Calculation id (fromInteger x) (fromInteger y) "Subtraction" answer )
-                    json <- returnJson $ Answer (x - y)
+                Just (Entity id _) -> do
+                    runDB $ insert $ getCalculation id x y op a
+                    json <- operationJson a
                     sendResponseStatus status201 json
-                Nothing -> do
-                    addHeader "Location" "http://localhost:3000/"
-                    sendResponseStatus status301 ()
-        Nothing -> do
-            addHeader "Location" "http://localhost:3000/"
-            sendResponseStatus status301 ()
+                Nothing -> homeRedirect
+        Nothing -> homeRedirect
+
+
+operationToText :: Operation -> Text
+operationToText o = pack (show o)
+
+getCalculation :: UserId ->  Integer -> Integer -> Operation -> Integer ->Calculation
+getCalculation id x y op a = Calculation id (fromInteger x) (fromInteger y) (operationToText op) (fromInteger a)
+
+homeRedirect :: Handler ()
+homeRedirect = do
+    addHeader "Location" "http://localhost:3000/"
+    sendResponseStatus status301 ()
 
 
 getHistoryR :: Handler ()
@@ -130,9 +92,7 @@ getHistoryR = do
                     calculations <- runDB $ selectList [CalculationUserId ==. id] []
                     layout <- historyLayout calculations name
                     sendResponseStatus status200 layout
-        Nothing -> do
-            addHeader "Location" "http://localhost:3000/"
-            sendResponseStatus status301 ()
+        Nothing -> homeRedirect
 
 
 getCalculations :: Entity Calculation -> Calculation

@@ -38,6 +38,7 @@ getSignupR = do
             layout <- signUpLayout
             sendResponseStatus status200 layout
 
+
 deleteLogoutR :: Handler ()
 deleteLogoutR = do
     maybeName <- lookupSession "username"
