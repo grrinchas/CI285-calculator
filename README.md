@@ -1,3 +1,27 @@
+
+## Setup
+
+You have to downlaod [stack](https://docs.haskellstack.org/en/stable/README/) if you don't have it
+ - Clone this repository
+ - From comman line run `stack runghc Main.hs`. Note you have to be in the `ci285-calculator` directory
+ - If everything was successfull, you should see `application launched`
+ - Open your browser and navigate to `http://localhost:3000`
+ - Well done!
+
+
+
+## Screenshots
+
+### Login screen
+![Imgur](http://i.imgur.com/GGRxSI0.png)
+
+### Signup screen
+![Imgur](http://i.imgur.com/q5PiNUL.png)
+
+### User home screen
+![Imgur](http://i.imgur.com/xBTUDVH.png)
+
+
 ## Users API
 
 API for dealing with users. That is creating new users, updating details, deleting as well as authenticating.
