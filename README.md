@@ -111,9 +111,3 @@ Possible responses:
 - 301 - if user is not have been authenticated or session expired
 - 404 - if url was wrong
 - 400 - badly formatter request.
-
-### _GET /calculations/:username_
-
-Returns all calculations for specific user. Note, that only authorised users can access this resource.
-
-Possible responses:
