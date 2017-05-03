@@ -23,6 +23,5 @@ getAdditionsR x y = operationJson $ x + y
 getSubtractionsR :: Integer -> Integer -> Handler Value
 getSubtractionsR x y = operationJson $ x - y
 
-
 operationJson :: Integer -> Handler Value
 operationJson a = returnJson $ Answer a
